@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+    <head>
+        <meta charset="UTF-8">
+        <title>Live Play Website</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+               {% load static%}
+        <link rel="stylesheet" href="{% static 'register2.css' %}">
+    </head>
+    <body>
+       
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        
+        <label class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+          <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+          <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+          <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+          <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+        </svg> Live Play</label>
+        <ul>
+        </ul>
+    </nav>
+        <br><br><br>
+        <div class="center"> 
+          <br>
+            <h2>Customer Registeration</h2>
+            <br>
+            <form action="" method="post">   
+              {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" name="Username" id="Username" required="required">
+                <label>Create a username</label>
+                <br>
+              </div>
+              
+             <div class="txt_field">
+                <input type="email" name="Email address" id="Email address" required="required">
+                <label>Enter Valid Email address</label>
+                <br>
+              </div>
+
+              <div class="txt_field">
+                <input type="password" name="pass1" id="pass1" required="required">
+                <label> Create password</label>
+                <br>
+              </div>
+
+              <div class="txt_field">
+                <input type="password" name="pass2" id="pass2" required="required">
+                <label>Confirm password</label>
+                <br>
+              </div>
+              <br>
+             <input type="submit" value="Register">
+             <br><br><br>
+             <div class="login_link"> <p>Already a memeber ? <a href ={% url 'login'%} "Login.html">Login</a></p>
+             </div>  
+             <div class="or_link"><p>OR</p></div> 
+             <div class="guest_link"> <p>Continue as Guest...  <a href ={% url 'guest'%} "Guest.html" >Guest Mode</a></p>
+
+           </form>
+       </div>
+    </body>
+    </html>   
